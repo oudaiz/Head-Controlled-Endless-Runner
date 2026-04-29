@@ -10,7 +10,6 @@ public class TrainSpawner : MonoBehaviour
     public float minSpawnTime = 3f;
     public float maxSpawnTime = 5f;
 
-    // أقل مسافة آمنة بين القطارات في نفس السكة
     public float minGapSameLane = 130f;
 
     private float spawnTimer;
@@ -49,7 +48,6 @@ public class TrainSpawner : MonoBehaviour
         Transform chosenPoint = spawnLeft ? leftSpawnPoint : rightSpawnPoint;
         GameObject lastTrain = spawnLeft ? lastLeftTrain : lastRightTrain;
 
-        // إذا يوجد قطار سابق في نفس السكة وما زال قريبًا، لا تولد
         if (lastTrain != null)
         {
             float distanceZ = Mathf.Abs(spawnZ - lastTrain.transform.position.z);
