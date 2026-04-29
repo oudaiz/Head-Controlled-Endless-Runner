@@ -22,7 +22,6 @@ public class EndlessGround : MonoBehaviour
         float speedMultiplier = player.gameSpeed;
         transform.Translate(Vector3.back * groundSpeed * speedMultiplier * Time.deltaTime, Space.World);
 
-        // نفس منطقك الأصلي تقريبًا، لكن مع overlap بسيط
         if (transform.position.z < -groundLength)
         {
             transform.position += Vector3.forward * ((groundLength * 2f) - overlap);
